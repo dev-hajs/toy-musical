@@ -1,5 +1,6 @@
 package com.project.musical.service;
 
+import com.project.musical.model.Musical;
 import com.project.musical.repository.MusicalRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -11,4 +12,19 @@ public class MusicalService {
     private final MusicalRepository musicalRepository;
 
 
+    public void createMusical(Musical musical) {
+        musicalRepository.createMusical(musical);
+    }
+
+    public Musical findMusical(Integer musicalId) {
+        return musicalRepository.findMusical(musicalId);
+    }
+
+    public Musical updateMusical(Musical musical) {
+        return musicalRepository.updateMusical(musical);
+    }
+
+    public void deleteMusical(Integer musicalId) {
+        musicalRepository.deleteMusical(musicalId);
+    }
 }
