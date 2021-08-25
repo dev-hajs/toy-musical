@@ -2,6 +2,7 @@ package com.project.musical.model;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -19,7 +20,7 @@ public class Musical {
     private Producer producer;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private List<Actor> actors;
+    private List<Actor> actors = new ArrayList<>();
 
     private LocalDateTime startDate;
     private LocalDateTime endDate;
